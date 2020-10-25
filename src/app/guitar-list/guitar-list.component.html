@@ -1,0 +1,15 @@
+<mat-action-list *ngFor="let guitCollection of guitarCollection">
+  <h1 matSubheader>{{ guitCollection.type }}</h1>
+  <button
+    class="button-within-list"
+    mat-list-item
+    *ngFor="let guitar of guitCollection.guitars; last as last"
+  >
+    <mat-icon matListIcon>music_note</mat-icon>
+    <h3 matLine>{{guitar.brand}} {{guitar.model}}</h3>
+    <p matLine>
+      <span>{{guitar.releaseYear}}</span>
+    </p>
+    <mat-divider *ngIf="!last"></mat-divider>
+  </button>
+</mat-action-list>
